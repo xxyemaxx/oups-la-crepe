@@ -4,19 +4,24 @@
     import MenuItem from "$lib/components/MenuItem.svelte";
     import { menu } from "$lib/data/menu.js";
 
-    // Datos de Contacto (Última actualización de la conversación)
+    // Datos de Contacto
     const address = "Del Centro Comercial Aleste en Curridabat";
-    const phone = "8848-3086";
+    const phone = "88483086"; // <-- ¡IMPORTANTE! Número sin guiones para los enlaces
     const email = "Adriana Meléndez Sánchez";
 
-    // URL de ejemplo para el mapa
+    // URL de WhatsApp para iniciar chat: https://wa.me/506 + número
+    const whatsappUrl = `https://wa.me/506${phone}`;
+
+    // URL de la ubicación de Google Maps (Link directo para abrir en nueva pestaña)
+    const mapLocationUrl =
+        "https://www.google.com/maps/place/Centro+Comercial+Aleste/@9.9153694,-84.0479068,13z/data=!4m10!1m2!2m1!1scentro+comercial+curridabat!3m6!1s0x8fa0e33f440389ef:0x7e17f73258410b6c!8m2!3d9.9216669!4d-84.0205722!15sChtjZW50cm8gY29tZXJjaWFsIGN1cnJpZGFiYXRaHSIbY2VudHJvIGNvbWVyY2lhbCBjdXJyaWRhYmF0kgEPc2hvcHBpbmdfY2VudGVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVExZVV4dE0yTjNFQUXgAQD6AQQIABBJ!16s%2Fg%2F11t2rwyd3d?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D";
+
+    // URL DE INCORPORACIÓN DEL MAPA (URL real de incrustación de Aleste)
     const mapIframeUrl =
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.298715764724!2d-84.1481177!3d9.923838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4e13.1!3m3!1m2!1s0x8fa0e41776510a7b%3A0x81152a5518b53272!2sMultiplaza%20Escaz%C3%BA!5e0!3m2!1ses-419!2scr!4v1678229971844!5m2!1ses-419!2scr";
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62883.56940143872!2d-84.0479068!3d9.9153694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e33f440389ef%3A0x7e17f73258410b6c!2sCentro%20Comercial%20Aleste!5e0!3m2!1ses-419!2scr!4v1764189311645!5m2!1ses-419!2scr";
 
-    // Ruta de la imagen de fondo principal (Asume que está en static/img/crepe-hero.jpg)
+    // Ruta de la imagen de fondo principal
     const heroImage = "/img/crepe-hero.jpg";
-
-    // **ELIMINADO: const images (Datos de Galería)**
 </script>
 
 <section
@@ -83,7 +88,22 @@
                 <p>{address}</p>
 
                 <h3>📞 Teléfonos</h3>
-                <p>{phone}</p>
+                <p>
+                    <a href="tel:+506{phone}" class="contact-link">
+                        +506 {phone} (Tocar para llamar)
+                    </a>
+                </p>
+
+                <h3 class="whatsapp-title">📱 WhatsApp</h3>
+                <p>
+                    <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        class="contact-link whatsapp-link"
+                    >
+                        Enviar mensaje por WhatsApp
+                    </a>
+                </p>
 
                 <h3>👤 Nombre del Contacto</h3>
                 <p>{email}</p>
@@ -94,41 +114,24 @@
                 <p>Dom: 11:00 am - 9:00 pm</p>
             </div>
 
-            <iframe
-                src={mapIframeUrl}
-                width="100%"
-                height="300"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Ubicación de Oups la crêpe"
+            <a
+                href={mapLocationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-link"
             >
-            </iframe>
-        </div>
-
-        <div class="form-column">
-            <h2>Envíanos un Mensaje</h2>
-            <form
-                on:submit|preventDefault={() =>
-                    alert("Mensaje enviado (simulado)")}
-            >
-                <div class="form-group">
-                    <label for="name">Nombre Completo</label>
-                    <input type="text" id="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Tu Mensaje</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-button"
-                    >Enviar Mensaje</button
+                <iframe
+                    src={mapIframeUrl}
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Oups la crêpe"
                 >
-            </form>
+                </iframe>
+            </a>
         </div>
     </div>
 </section>
@@ -151,7 +154,6 @@
         text-align: center;
         margin-bottom: 40px;
         position: relative;
-        /* Superposición oscura para que el texto blanco resalte */
         background-color: rgba(0, 0, 0, 0.4);
         background-blend-mode: overlay;
         border-radius: 8px;
@@ -264,17 +266,17 @@
 
     .content-wrapper {
         display: flex;
+        justify-content: center;
         gap: 40px;
         padding: 0 20px;
     }
 
-    .info-column,
-    .form-column {
+    .info-column {
         flex: 1;
+        max-width: 800px;
     }
 
-    .info-column h2,
-    .form-column h2 {
+    .info-column h2 {
         text-align: left;
         color: #5a3f1f; /* Marrón Oscuro */
         border-bottom: 2px solid #daa520; /* Dorado */
@@ -291,55 +293,70 @@
         font-weight: 600;
     }
 
-    iframe {
-        border-radius: 8px;
-        margin-top: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    label {
+    /* Estilos para los nuevos enlaces de contacto (Teléfono/WhatsApp) */
+    .contact-link {
+        text-decoration: none;
+        color: #5a3f1f; /* Marrón Oscuro */
+        font-weight: 600;
+        transition: color 0.3s;
         display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-        color: #222222; /* Texto Oscuro */
     }
 
-    input,
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        font-size: 1em;
-        font-family: "Montserrat", sans-serif;
+    .contact-link:hover {
+        color: #daa520; /* Dorado */
+        text-decoration: underline;
     }
 
-    .submit-button {
-        background-color: #daa520; /* Dorado */
-        color: white;
-        padding: 12px 25px;
-        border: none;
+    .whatsapp-title {
+        margin-top: 25px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .whatsapp-link {
+        background-color: #25d366; /* Verde de WhatsApp */
+        color: white !important;
+        padding: 8px 15px;
         border-radius: 5px;
-        cursor: pointer;
-        font-size: 1.1em;
+        text-align: center;
+        margin-top: 10px;
+        display: inline-block;
+        text-decoration: none;
         font-weight: bold;
-        transition: background-color 0.3s;
-        text-transform: uppercase;
     }
 
-    .submit-button:hover {
-        background-color: #c08e17; /* Dorado más oscuro al pasar el ratón */
+    .whatsapp-link:hover {
+        background-color: #1faa54;
+    }
+
+    /* Estilos del Mapa */
+    .map-link {
+        cursor: pointer;
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        margin-top: 20px;
+    }
+
+    .map-link:hover {
+        transform: scale(1.005);
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 900px) {
         .content-wrapper {
             flex-direction: column;
             padding: 0;
+        }
+        .info-column {
+            max-width: 100%;
         }
     }
 </style>

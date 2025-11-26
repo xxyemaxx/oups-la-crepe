@@ -1,13 +1,12 @@
 <script>
-    // Lista de enlaces de navegación (¡GALERÍA HA SIDO ELIMINADA!)
+    // Lista de enlaces de navegación (¡Solo INICIO, MENÚ, CONTACTO!)
     const navLinks = [
-        { name: "INICIO", path: "#top" },
         { name: "MENÚ", path: "#menu" },
         { name: "CONTACTO", path: "#contacto" },
     ];
 
-    // Ruta del logo. Asegúrate de que esta ruta coincida con el nombre de tu archivo en static/img/
-    const headerLogo = "/img/oups-logo.jpg";
+    // RUTA ACTUALIZADA A PNG: Esto asume que guardaste el logo transparente como 'oups-logo.png'
+    const headerLogo = "/img/oups-logo.png";
 </script>
 
 <header>
@@ -53,7 +52,7 @@
         right: 0;
         z-index: 100;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        border-bottom: 3px solid #f8f4ec;
+        border-bottom: 3px solid #f8f4ec; /* Línea suave para darle estructura al header */
     }
 
     .logo a {
@@ -65,12 +64,12 @@
     }
 
     .logo a:hover {
-        opacity: 0.8; /* Efecto de desvanecimiento sutil al pasar el ratón */
+        opacity: 0.8;
     }
 
     /* ESTILOS CLAVE: AJUSTE DE TAMAÑO PARA EL LOGO EN EL HEADER */
     .header-logo-img {
-        height: 65px; /* ¡TAMAÑO ACTUALIZADO! Logo más grande en la esquina */
+        height: 65px; /* Tamaño actualizado */
         width: auto;
     }
 

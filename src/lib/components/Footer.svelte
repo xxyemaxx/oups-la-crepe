@@ -6,7 +6,7 @@
     <div class="footer-content">
         <div class="contact-info">
             <h3>CONTACTO</h3>
-            <p>📍 Dirección: Del Centro Comercial Aleste en Curridabat</p>
+            <p>📍 Dirección: Centro Comercial Aleste</p>
             <p>📞 Teléfono: (506) 8848-3086</p>
             <p>👤 Nombre del Contacto: Adriana Meléndez Sánchez</p>
         </div>
