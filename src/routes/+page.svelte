@@ -4,19 +4,19 @@
     import MenuItem from "$lib/components/MenuItem.svelte";
     import { menu } from "$lib/data/menu.js";
 
-    // Datos de Contacto (ACTUALIZADOS)
+    // Datos de Contacto (Última actualización de la conversación)
     const address = "Del Centro Comercial Aleste en Curridabat";
     const phone = "8848-3086";
-    const email = "Adriana Meléndez Sánchez"; // Nombre de contacto
+    const email = "Adriana Meléndez Sánchez";
 
     // URL de ejemplo para el mapa
     const mapIframeUrl =
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.298715764724!2d-84.1481177!3d9.923838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4e13.1!3m3!1m2!1s0x8fa0e41776510a7b%3A0x81152a5518b53272!2sMultiplaza%20Escaz%C3%BA!5e0!3m2!1ses-419!2scr!4v1678229971844!5m2!1ses-419!2scr";
 
-    // Rutas de Imágenes (VERIFICA que estas rutas y extensiones coincidan con tus archivos en static/img/)
-    // Reemplaza .jpg por .png si tienes el logo con fondo transparente.
-    const logoHero = "/img/oups-logo.jpg";
+    // Ruta de la imagen de fondo principal (Asume que está en static/img/crepe-hero.jpg)
     const heroImage = "/img/crepe-hero.jpg";
+
+    // **ELIMINADO: const images (Datos de Galería)**
 </script>
 
 <section
@@ -25,12 +25,6 @@
     style="background-image: url({heroImage});"
 >
     <div class="hero-content">
-        <img
-            src={logoHero}
-            alt="Logo Oups la crêpe"
-            class="hero-logo-overlay"
-        />
-
         <h1>Oups la crêpe</h1>
         <p>La auténtica crepa francesa en su máxima expresión.</p>
         <a href="#menu" class="cta-button">Ver Menú Completo</a>
@@ -168,28 +162,8 @@
         color: #ffffff;
         padding: 20px;
         position: relative;
-        z-index: 2; /* Asegura que el texto esté sobre el logo */
+        z-index: 2;
         max-width: 800px;
-    }
-
-    /* AJUSTES PARA EL LOGO MARCA DE AGUA (para que se vea sutil y centrado) */
-    .hero-logo-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        /* Tamaño para marca de agua */
-        width: 300px;
-        max-width: 80%;
-        height: 300px;
-
-        /* Opacidad baja para el efecto sutil */
-        opacity: 0.1;
-
-        object-fit: contain;
-        z-index: 1;
-        pointer-events: none;
     }
 
     .hero-content h1 {
@@ -366,13 +340,6 @@
         .content-wrapper {
             flex-direction: column;
             padding: 0;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-logo-overlay {
-            width: 250px;
-            height: 250px;
         }
     }
 </style>

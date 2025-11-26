@@ -1,17 +1,24 @@
 <script>
-    // Ya no es necesario importar 'page' si solo usamos enlaces estáticos.
-
-    // Lista de enlaces de navegación (sin Galería)
+    // Lista de enlaces de navegación (¡GALERÍA HA SIDO ELIMINADA!)
     const navLinks = [
         { name: "INICIO", path: "#top" },
         { name: "MENÚ", path: "#menu" },
         { name: "CONTACTO", path: "#contacto" },
     ];
+
+    // Ruta del logo. Asegúrate de que esta ruta coincida con el nombre de tu archivo en static/img/
+    const headerLogo = "/img/oups-logo.jpg";
 </script>
 
 <header>
     <div class="logo">
-        <a href="#top">Oups la crêpe</a>
+        <a href="#top">
+            <img
+                src={headerLogo}
+                alt="Oups la crêpe Logo"
+                class="header-logo-img"
+            />
+        </a>
     </div>
 
     <nav>
@@ -29,14 +36,12 @@
 
 <style>
     /* Paleta de colores del logo:
-    - Fondo (Base): #F8F4EC (Crema)
     - Marrón Oscuro (Texto principal/Logo): #5A3F1F
     - Dorado (Acento/Corazón): #DAA520
-    - Negro Oscuro (Texto secundario): #222222
     */
 
     header {
-        background-color: #ffffff; /* Fondo blanco para contraste */
+        background-color: #ffffff;
         color: #222222;
         padding: 10px 40px;
         display: flex;
@@ -48,20 +53,25 @@
         right: 0;
         z-index: 100;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        border-bottom: 3px solid #f8f4ec; /* Línea suave color crema */
+        border-bottom: 3px solid #f8f4ec;
     }
 
     .logo a {
-        font-family: "Playfair Display", serif;
-        font-size: 1.8em;
-        font-weight: bold;
-        color: #5a3f1f; /* Marrón Oscuro */
+        /* Estilos de enlace para el logo de imagen */
         text-decoration: none;
-        transition: color 0.3s;
+        transition: opacity 0.3s;
+        display: flex;
+        align-items: center;
     }
 
     .logo a:hover {
-        color: #daa520; /* Dorado al pasar el ratón */
+        opacity: 0.8; /* Efecto de desvanecimiento sutil al pasar el ratón */
+    }
+
+    /* ESTILOS CLAVE: AJUSTE DE TAMAÑO PARA EL LOGO EN EL HEADER */
+    .header-logo-img {
+        height: 65px; /* ¡TAMAÑO ACTUALIZADO! Logo más grande en la esquina */
+        width: auto;
     }
 
     nav ul {
@@ -82,7 +92,6 @@
         transition: color 0.3s;
     }
 
-    /* Línea de acento debajo del enlace */
     nav a::after {
         content: "";
         position: absolute;
@@ -94,7 +103,6 @@
         transition: width 0.3s ease-out;
     }
 
-    /* Efecto al pasar el ratón */
     nav a:hover {
         color: #5a3f1f; /* Marrón Oscuro */
     }
@@ -111,8 +119,8 @@
         nav ul {
             gap: 15px;
         }
-        .logo a {
-            font-size: 1.5em;
+        .header-logo-img {
+            height: 45px; /* Ajuste del tamaño del logo para móviles */
         }
         nav a {
             font-size: 0.9em;
