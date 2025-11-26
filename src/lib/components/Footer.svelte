@@ -13,9 +13,8 @@
 
         <div class="schedule">
             <h3>HORARIO</h3>
-            <p>Lun - Jue: 10:00 am - 9:00 pm</p>
-            <p>Vie - Sáb: 10:00 am - 9:30 pm</p>
-            <p>Dom: 11:00 am - 9:00 pm</p>
+            <p>Lun - Vie: N/A am - N/A pm</p>
+            <p>Mie - Dom: 12:00 md - 8:00 pm</p>
         </div>
 
         <div class="branding">

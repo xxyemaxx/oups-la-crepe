@@ -5,20 +5,16 @@
     import { menu } from "$lib/data/menu.js";
 
     // Datos de Contacto
-    const address = "Del Centro Comercial Aleste en Curridabat";
-    const phone = "88483086"; // <-- ¡IMPORTANTE! Número sin guiones para los enlaces
+    const address = "Centro Comercial Aleste"; // <-- ¡TEXTO ACTUALIZADO!
+    const phone = "88483086";
     const email = "Adriana Meléndez Sánchez";
 
     // URL de WhatsApp para iniciar chat: https://wa.me/506 + número
     const whatsappUrl = `https://wa.me/506${phone}`;
 
-    // URL de la ubicación de Google Maps (Link directo para abrir en nueva pestaña)
+    // URL de la ubicación de Google Maps (¡Usada para el clic!)
     const mapLocationUrl =
         "https://www.google.com/maps/place/Centro+Comercial+Aleste/@9.9153694,-84.0479068,13z/data=!4m10!1m2!2m1!1scentro+comercial+curridabat!3m6!1s0x8fa0e33f440389ef:0x7e17f73258410b6c!8m2!3d9.9216669!4d-84.0205722!15sChtjZW50cm8gY29tZXJjaWFsIGN1cnJpZGFiYXRaHSIbY2VudHJvIGNvbWVyY2lhbCBjdXJyaWRhYmF0kgEPc2hvcHBpbmdfY2VudGVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVExZVV4dE0yTjNFQUXgAQD6AQQIABBJ!16s%2Fg%2F11t2rwyd3d?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D";
-
-    // URL DE INCORPORACIÓN DEL MAPA (URL real de incrustación de Aleste)
-    const mapIframeUrl =
-        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62883.56940143872!2d-84.0479068!3d9.9153694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e33f440389ef%3A0x7e17f73258410b6c!2sCentro%20Comercial%20Aleste!5e0!3m2!1ses-419!2scr!4v1764189311645!5m2!1ses-419!2scr";
 
     // Ruta de la imagen de fondo principal
     const heroImage = "/img/crepe-hero.jpg";
@@ -84,8 +80,16 @@
             <h2>Nuestra Ubicación</h2>
 
             <div class="details">
-                <h3>📍 Dirección</h3>
-                <p>{address}</p>
+                <h3>📍 Dirección (Haz clic para ver en Maps)</h3>
+                <p>
+                    <a
+                        href={mapLocationUrl}
+                        target="_blank"
+                        class="contact-link address-link"
+                    >
+                        {address}
+                    </a>
+                </p>
 
                 <h3>📞 Teléfonos</h3>
                 <p>
@@ -109,29 +113,9 @@
                 <p>{email}</p>
 
                 <h3 class="schedule-title">🕒 Horario</h3>
-                <p>Lun - Jue: 10:00 am - 9:00 pm</p>
-                <p>Vie - Sáb: 10:00 am - 9:30 pm</p>
-                <p>Dom: 11:00 am - 9:00 pm</p>
+                <p>Lun - Vie: N/A am - N/A pm</p>
+                <p>Mie - Dom: 12:00 md - 8:00 pm</p>
             </div>
-
-            <a
-                href={mapLocationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="map-link"
-            >
-                <iframe
-                    src={mapIframeUrl}
-                    width="100%"
-                    height="300"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Ubicación de Oups la crêpe"
-                >
-                </iframe>
-            </a>
         </div>
     </div>
 </section>
@@ -293,7 +277,7 @@
         font-weight: 600;
     }
 
-    /* Estilos para los nuevos enlaces de contacto (Teléfono/WhatsApp) */
+    /* Estilos para los enlaces de contacto (Teléfono/WhatsApp y Dirección) */
     .contact-link {
         text-decoration: none;
         color: #5a3f1f; /* Marrón Oscuro */
@@ -305,6 +289,10 @@
     .contact-link:hover {
         color: #daa520; /* Dorado */
         text-decoration: underline;
+    }
+
+    .address-link {
+        margin-bottom: 20px; /* Separación de este bloque al siguiente */
     }
 
     .whatsapp-title {
@@ -326,28 +314,6 @@
 
     .whatsapp-link:hover {
         background-color: #1faa54;
-    }
-
-    /* Estilos del Mapa */
-    .map-link {
-        cursor: pointer;
-        display: block;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s;
-        margin-top: 20px;
-    }
-
-    .map-link:hover {
-        transform: scale(1.005);
-    }
-
-    iframe {
-        width: 100%;
-        height: 300px;
-        border: 0;
-        display: block;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 900px) {

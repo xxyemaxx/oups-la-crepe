@@ -1,28 +1,58 @@
 export const menu = [
     {
-        category: "CREPES DULCES",
+        category: "CREPAS DULCES",
         items: [
-            { name: "La Oups Especial", description: "Fresas, bananos, Nutella, dulce de leche, almendras y crema chantilly." },
-            { name: "Suzette Flambé", description: "Jugo de naranja, licor Grand Marnier y ralladura de naranja." },
-            { name: "Kids Crepe", description: "Nutella o dulce de leche con helado a elegir (vainilla, fresa o chocolate)." },
-            { name: "Melba Pêche", description: "Rebanadas de melocotón en almíbar con helado de vainilla." }
+            // Sección Nutella, Dulce de Leche, Leche Condensada (sin coco)
+            { name: "Nutella", description: "₡ 3000" },
+            { name: "Dulce de Leche", description: "₡ 3000" },
+            { name: "Leche Condensada", description: "₡ 3000" },
+
+            // Sección Nutella, Dulce de Leche, Leche Condensada (con coco)
+            { name: "Nutella y Coco", description: "₡ 3300" },
+            { name: "Dulce de Leche y Coco", description: "₡ 3300" },
+            { name: "Leche Condensada y Coco", description: "₡ 3300" },
+
+            // Sección con Fresas
+            { name: "Nutella con Fresas", description: "₡ 3700" },
+            { name: "Dulce de Leche con Fresas", description: "₡ 3700" },
+            { name: "Leche Condensada con Fresas", description: "₡ 3700" },
+
+            // Sección con Banano
+            { name: "Nutella con Banano", description: "₡ 3500" },
+            { name: "Dulce de Leche con Banano", description: "₡ 3500" },
+            { name: "Leche Condensada con Banano", description: "₡ 3500" },
+
+            // Sección con Fresas y Banano
+            { name: "Nutella con Fresas y Banano", description: "₡ 3900" },
+            { name: "Dulce de Leche con Fresas y Banano", description: "₡ 3900" },
+            { name: "Leche Condensada con Fresas y Banano", description: "₡ 3900" },
+
+            // Sección de Mantequilla
+            { name: "Mantequilla y Azúcar", description: "₡ 2800" },
+            { name: "Mantequilla, Azúcar y Limón Canela", description: "₡ 2800" },
+
+            // Sección Gourmet
+            { name: "Mermelada Sant Dalfourt y Queso Crema", description: "₡ 4000" }
         ]
     },
     {
-        category: "CREPES SALADAS",
+        category: "CREPAS SALADAS",
         items: [
-            { name: "Imperial de Pollo", description: "Trozos de pechuga de pollo, queso mozzarella, hongos y cebolla caramelizada." },
-            { name: "Paris Clásica", description: "Jamón, huevo, queso mozzarella, rociada ligeramente con mantequilla." },
-            { name: "Veggie Delight", description: "Espinacas cocinadas, hongos y cebolla caramelizada con salsa de tomate natural." },
-            { name: "Genovesa", description: "Queso mozzarella y tomate natural con salsa de pesto." }
+            { name: "Jamón y Mozarella", description: "₡ 4000 (Salsa a elegir)" }
         ]
     },
     {
-        category: "BEBIDAS Y CAFÉ",
+        category: "ADICIONALES Y EXTRAS",
         items: [
-            { name: "Café Glacé", description: "Espresso frío con leche y hielo, ideal para el calor." },
-            { name: "Smoothie Silvestre", description: "Batido de frutos rojos, yogur y un toque de miel." },
-            { name: "Té Chai Latte", description: "Té negro especiado con leche vaporizada y canela." }
+            { name: "Helado", description: "₡ 800" },
+            { name: "Fresas", description: "₡ 800" },
+            { name: "Extras Variados (Nueces, Almendras, Chantilly, Nutella, Dulce de Leche, etc.)", description: "₡ 500 c/u" }
+        ]
+    },
+    {
+        category: "BEBIDAS",
+        items: [
+            { name: "Agua, Té Frío y Gaseosas", description: "₡ 800" }
         ]
     }
 ];
