@@ -1,13 +1,11 @@
 <script lang="ts">
 	import Header from "$lib/components/Header.svelte";
-	import Footer from "$lib/components/Footer.svelte";
-	import favicon from "$lib/assets/favicon.svg";
-
+	import Footer from "$lib/components/Footer.svelte"; // La importación de favicon fue eliminada para resolver el error de ruta.
+	// import favicon from "$lib/assets/favicon.svg";
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
 	<title>Oups la crêpe - La auténtica crepa francesa</title>
 </svelte:head>
 

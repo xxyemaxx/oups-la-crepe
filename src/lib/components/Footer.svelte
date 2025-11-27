@@ -1,7 +1,3 @@
-<script>
-    // ... (tu script actual)
-</script>
-
 <footer>
     <div class="footer-content">
         <div class="contact-info">
@@ -13,7 +9,7 @@
 
         <div class="schedule">
             <h3>HORARIO</h3>
-            <p>Lun - Vie: N/A am - N/A pm</p>
+            <p>Lun - Mar - Cerrado</p>
             <p>Mie - Dom: 12:00 md - 8:00 pm</p>
         </div>
 

@@ -1,10 +1,9 @@
 <script>
-    // Lista de enlaces de navegación (¡Solo INICIO, MENÚ, CONTACTO!)
+    // Lista de enlaces de navegación (¡Solo MENÚ, CONTACTO!)
     const navLinks = [
         { name: "MENÚ", path: "#menu" },
         { name: "CONTACTO", path: "#contacto" },
     ];
-
     // RUTA ACTUALIZADA A PNG: Esto asume que guardaste el logo transparente como 'oups-logo.png'
     const headerLogo = "/img/oups-logo.png";
 </script>

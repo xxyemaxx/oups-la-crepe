@@ -113,7 +113,7 @@
                 <p>{email}</p>
 
                 <h3 class="schedule-title">🕒 Horario</h3>
-                <p>Lun - Vie: N/A am - N/A pm</p>
+                <p>Lun - Mar - Cerrado</p>
                 <p>Mie - Dom: 12:00 md - 8:00 pm</p>
             </div>
         </div>
